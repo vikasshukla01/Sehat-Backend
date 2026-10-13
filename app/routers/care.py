@@ -16,6 +16,8 @@ def nearby_care(lat: float = Query(...), lng: float = Query(...)):
                 "type": f["type"],
                 "distanceKm": round(distance, 1),
                 "services": f["services"],
+                "lat": f["lat"],
+                "lng": f["lng"],
             }
         )
     results.sort(key=lambda r: r["distanceKm"])
